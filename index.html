@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rydex - Used Cars</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                <h1>Rydex</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="home-link active">Home</a>
+                <a href="browse.html" class="browse-link">Browse Cars</a>
+                <a href="sell.html" class="sell-link">Sell Your Car</a>
+                <a href="about.html" class="about-link">About</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="signInBtn" class="btn-secondary">Sign In</button>
+                <a href="list.html"><button class="btn-primary">List Your Car</button></a>
+            </div>
+        </nav>
+        <section class="hidden">
+            <div id="signInModal" class="modal">
+                <div class="modal-content">
+                    <h2>Sign In</h2>
+                    <form id="signinForm">
+                        <input type="text" placeholder="Username" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit" class="submit">Log In</button>
+                    </form>
+                    <div class="create-account">
+                        <p>Don't have an account? <button id="signUpBtn" class="btn-link">Sign Up</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Find Your Perfect Pre-Owned Vehicle</h2>
+            <p>Browse our selection of quality used cars at competitive prices</p>
+        </section>
+
+        <section class="filters">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search by make, model, or year...">
+            </div>
+            <div class="filter-options">
+                <select id="priceFilter">
+                    <option value="">Price Range</option>
+                    <option value="0-10000">Under $10,000</option>
+                    <option value="10000-20000">$10,000 - $20,000</option>
+                    <option value="20000-30000">$20,000 - $30,000</option>
+                    <option value="30000">$30,000+</option>
+                </select>
+                <button class="btn-secondary">More Filters</button>
+            </div>
+        </section>
+
+        <section id="carList" class="car-list">
+            <!-- Cars will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Rydex. All rights reserved.</p>
+    </footer>
+
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

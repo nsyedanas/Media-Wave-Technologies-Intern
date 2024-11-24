@@ -1,0 +1,523 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* Header Styles */
+header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 1.7rem;
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Modal Background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(12px); 
+    z-index: 1000; 
+}
+
+/* Modal Content */
+.modal-content {
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.2);
+    width: 400px;
+}
+
+.modal-content h2 {
+    margin-bottom: 1rem;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit:hover {
+    background-color: #0056b3;
+}
+
+.create-account {
+    margin-top: 1rem;
+}
+
+.create-account .btn-link {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* Button Styles */
+.btn-primary, .btn-secondary {
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn-secondary {
+    background-color: #f3f4f6;
+    color: #666;
+}
+
+.btn-secondary:hover {
+    background-color: #e5e7eb;
+}
+
+/* Main Content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: #1f2937;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    color: #666;
+}
+
+/* Filters */
+.filters {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.search-bar {
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.search-bar input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+.filter-options {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter-options select {
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Car List */
+.car-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.car-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.car-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.car-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.car-details {
+    padding: 1rem;
+}
+
+.car-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.car-price {
+    font-size: 1.5rem;
+    color: #2563eb;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.car-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.car-info span {
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-top: 1px solid #e5e7eb;
+    color: #666;
+    margin-top: 4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .filters {
+        flex-direction: column;
+    }
+    
+    .filter-options {
+        flex-direction: column;
+    }
+}
+
+/*Home page finished*/
+/*Additional pages*/
+
+/* Sell Page Styles */
+.sell-intro {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: #f8fafc;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.sell-intro h2 {
+    font-size: 2.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.sell-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.step-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background-color: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-weight: bold;
+}
+
+/* About Page Styles */
+.about-hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #f8fafc;
+    margin-bottom: 3rem;
+}
+
+.about-hero h2 {
+    font-size: 3rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.about-section {
+    margin-bottom: 3rem;
+}
+
+.about-section h3 {
+    font-size: 1.5rem;
+    color: #1f2937;
+    margin-bottom: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+}
+
+.features-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.features-list li::before {
+    content: "✓";
+    color: #2563eb;
+    position: absolute;
+    left: 0;
+}
+
+/* Listing Form Styles */
+.listing-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.2);
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.car-preview {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.car-preview img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Browse Filters Styles */
+.browse-filters {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: #4b5563;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sell-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .browse-filters {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-hero h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Logo Link Style */
+.logo-link {
+    text-decoration: none;
+}
+
+/* CTA Section */
+.cta-section {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f8fafc;
+    border-radius: 0.5rem;
+    margin-top: 3rem;
+}
+
+.cta-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/*differentiation in header*/
+a.active {
+    font-weight: bold;
+    color: #007bff; /* Active color */
+}
+
+

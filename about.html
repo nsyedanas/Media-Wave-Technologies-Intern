@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Rydex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                <h1>Rydex</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="home-link">Home</a>
+                <a href="browse.html" class="browse-link">Browse Cars</a>
+                <a href="sell.html" class="sell-link">Sell Your Car</a>
+                <a href="about.html" class="about-link active">About</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="signInBtn" class="btn-secondary">Sign In</button>
+                <a href="list.html"><button class="btn-primary">List Your Car</button></a>
+            </div>
+        </nav>
+        <section class="hidden">
+            <div id="signInModal" class="modal">
+                <div class="modal-content">
+                    <h2>Sign In</h2>
+                    <form id="signinForm">
+                        <input type="text" placeholder="Username" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit" class="submit">Log In</button>
+                    </form>
+                    <div class="create-account">
+                        <p>Don't have an account? <button id="signUpBtn" class="btn-link">Sign Up</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-hero">
+            <h2>About Rydex</h2>
+            <p>Your trusted platform for buying and selling quality used cars</p>
+        </section>
+
+        <section class="about-content">
+            <div class="about-section">
+                <h3>Our Story</h3>
+                <p>Founded in 2024, Rydex has become the go-to destination for car enthusiasts and sellers alike. We believe in making car trading simple, transparent, and enjoyable.</p>
+            </div>
+            <div class="about-section">
+                <h3>Our Mission</h3>
+                <p>To provide a seamless platform where buyers can find their perfect car and sellers can reach the right audience, all while ensuring transparency and trust in every transaction.</p>
+            </div>
+            <div class="about-section">
+                <h3>Why Choose Us</h3>
+                <ul class="features-list">
+                    <li>Verified Listings</li>
+                    <li>Secure Transactions</li>
+                    <li>Expert Support</li>
+                    <li>Market Insights</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Rydex. All rights reserved.</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

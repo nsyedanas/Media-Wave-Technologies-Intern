@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Seller - Rydex</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <span class="logo-icon">🚗</span>
+                <h1>Rydex</h1>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="home-link">Home</a>
+                <a href="browse.html" class="browse-link">Browse Cars</a>
+                <a href="sell.html" class="sell-link">Sell Your Car</a>
+                <a href="about.html" class="about-link">About</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="signInBtn" class="btn-secondary">Sign In</button>
+                <a href="list.html"><button class="btn-primary">List Your Car</button></a>
+            </div>
+        </nav>
+        <section class="hidden">
+            <div id="signInModal" class="modal">
+                <div class="modal-content">
+                    <h2>Sign In</h2>
+                    <form signinForm>
+                        <input type="text" placeholder="Username" required>
+                        <input type="password" placeholder="Password" required>
+                        <button type="submit" class="submit">Log In</button>
+                    </form>
+                    <div class="create-account">
+                        <p>Don't have an account? <button id="signUpBtn" class="btn-link">Sign Up</button></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-form">
+            <div class="car-preview">
+                <img id="carImage" src="" alt="Car Image" class="car-image">
+                <h3 id="carTitle" class="car-title"></h3>
+                <p id="carPrice" class="car-price"></p>
+            </div>
+            
+            <form id="contactForm">
+                <h2>Contact Seller</h2>
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Rydex. All rights reserved.</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="contact.js"></script>
+    <script src="app.js"></script>
+    
+
+</body>
+</html>
